@@ -31,10 +31,10 @@ include("dbconfig.php");
 //    $sql = "INSERT INTO `subjects` (`Name`, `subcode`, `sem`,`elective`) VALUES ('$subname', '$subcode', '$sem',$elect)";
 // }
 
-$sql="INSERT INTO `subject` (`Sub_Name`, `Description`, `Br_Details_ID`, `Sub_Code`, `Status`) VALUES ('$subname', '$Description', '$class', '$subcode', '$Status')";
+$sql="INSERT INTO `subject` (`Sub_Name`, `Description`, `Branch_details_ID`, `Sub_Code`, `Status`) VALUES ('$subname', '$description', '$bdid', '$subcode', '$status')";
 
 $result = $con->query($sql);
-$last_id = $con->insert_id;
+//$last_id = $con->insert_id;
 
 
 if($result == True ){

@@ -87,16 +87,17 @@ td{ font-size:12px !important; }
       <th role="columnheader">Gender</th>
       <th role="columnheader">Phone_No</th>
       <th role="columnheader">Email_ID</th>
-      <th role="columnheader"> Remarks</th>
+      <!-- <th role="columnheader"> Remarks</th> -->
       <th role="columnheader"> Reg_No</th>
       <th role="columnheader">SATS_No</th>
       <th role="columnheader">Enroll_No</th>
-      <th role="columnheader">Father_Name</th>
-      <th role="columnheader">Mother_Name</th>
+      <th role="columnheader">Fathers_Name</th>
+      <th role="columnheader">Mothers_Name</th>
       <th role="columnheader">DOB</th>
       <th role="columnheader">Address_1</th>
       <th role="columnheader">Address_2</th>
-      <th role="columnheader">City</th>     
+      <th role="columnheader">City</th>
+      <th role="columnheader">Pincode</th>     
        <th role="columnheader" class="action">Action</th>
     </tr>
   </thead>
@@ -116,7 +117,7 @@ td{ font-size:12px !important; }
                                 <td role="cell"><?=$row['Gender'];?></td>
                                 <td role="cell"><?=$row['Phone_No'];?></td>
                                 <td role="cell"><?=$row['Email_ID'];?></td>
-                                <td role="cell"><?=$row['Remarks'];?></td>
+                                <!-- <td role="cell"><?=$row['Remarks'];?></td> -->
                                 <td role="cell"><?=$row['Reg_No'];?></td>
                                 <td role="cell"><?=$row['SATS_No'];?></td>
                                 <td role="cell"><?=$row['Enroll_No'];?></td>
@@ -126,12 +127,13 @@ td{ font-size:12px !important; }
                                 <td role="cell"><?=$row['Address_1'];?></td>
                                 <td role="cell"><?=$row['Address_2'];?></td>
                                 <td role="cell"><?=$row['City'];?></td>
+                                <td role="cell"><?=$row['Pincode'];?></td>
                                  
 				
                              </tr>
                              <?php $i++; } ?>
                               </tbody>
-                              <tfoot class="hidden-xs hidden-sm">
+                              <!-- <tfoot class="hidden-xs hidden-sm">
                                  <tr>
 				    
             <th role="columnheader">Fname</th>
@@ -139,20 +141,21 @@ td{ font-size:12px !important; }
       <th role="columnheader">Roll_No </th>
       <th role="columnheader">Gender</th>
       <th role="columnheader">Phone_No</th>
-      <th role="columnheader">Email_ID</th>
-      <th role="columnheader"> Remarks</th>
-      <th role="columnheader"> Reg_No</th>
+      <th role="columnheader">Email_ID</th> -->
+      <!-- <th role="columnheader"> Remarks</th> -->
+      <!-- <th role="columnheader"> Reg_No</th>
       <th role="columnheader">SATS_No</th>
       <th role="columnheader">Enroll_No</th>
-      <th role="columnheader">Father_Name</th>
-      <th role="columnheader">Mother_Name</th>
+      <th role="columnheader">Fathers_Name</th>
+      <th role="columnheader">Mothers_Name</th>
       <th role="columnheader">DOB</th>
       <th role="columnheader">Address_1</th>
       <th role="columnheader">Address_2</th>
-      <th role="columnheader">City</th>              
+      
+      <th role="columnheader">Pincode</th>              
 	            <th  class="action"> ACTION</th>
                                  </tr>
-                              </tfoot>
+                              </tfoot> -->
                            </table>
                         </div>
                    </div>

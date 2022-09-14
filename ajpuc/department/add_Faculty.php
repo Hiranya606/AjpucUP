@@ -36,7 +36,7 @@ extract($_REQUEST); ?>
                <div class="panel-body">
                   <form class="form-horizontal" role="form" method="post" action="saveFaculty.php" enctype="multipart/form-data">
 
-                     <!-- <div class="form-group">
+                     <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
                            <label>Photo</label>
                         </div>
@@ -49,13 +49,13 @@ extract($_REQUEST); ?>
                               </div>
                            </div>
                         </div>
-                     </div> -->
+                     </div> 
 
 
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="name" class="control-label">FName </label><span id="sp">:</span>
+                           <label for="name" class="control-label">Fname </label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
                            <input type="text" class="form-control" name="fname" required>
@@ -64,7 +64,7 @@ extract($_REQUEST); ?>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="name" class="control-label">LName </label><span id="sp">:</span>
+                           <label for="name" class="control-label">Lname </label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
                            <input type="text" class="form-control" name="lname" required>
@@ -76,49 +76,47 @@ extract($_REQUEST); ?>
                            <label for="name" class="control-label">Phone_No</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="number" maxlength="10" class="form-control" name="fnum" required>
+                           <input type="text" maxlength="10" class="form-control" name="phoneno" required>
                         </div>
                      </div>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="fcemail" class="control-label">Email_ID</label><span id="sp">:</span>
+                           <label for="femail" class="control-label">Email_ID</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" name="fcemail" autocomplete="off" required>
+                           <input type="email" class="form-control" name="email" autocomplete="off" required>
                         </div>
                      </div>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="name" class="control-label">Status</label><span id="sp">:</span>
+                           <label for="name" class="control-label">Status</label><span id="sp">:</span> <span style="color:#f00">*</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" name="status">
+                           <input type="text" class="form-control" name="status" required>
                         </div>
                      </div>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
                            <label for="name" class="control-label">Gender</label><span id="sp">:</span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sx-12">
-                           <!-- <input type="text" class="form-control" name="gender"> -->
-                           <select name="Gender">
-                              <option disabled selected value> -- select an option -- </option>
-                              <option value="m">Male</option>
-                              <option value="f">Female</option>
-                              <option value="o">Others</option>
-                           </select>
-                        </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6 col-sx-12">
+                           <select name="gender">
+                           <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                           </div>
                      </div>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="highqual" class="control-label">Qualification</label><span id="sp">:</span>
+                           <label for="name" class="control-label">Qualification</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <select name="highqual">
+                           <select name="qualification">
 
                               <option value="B.Sc/M.Sc/B.Ed">B.Sc/M.Sc/B.Ed</option>
                               <option value="B.Com/M.Com/B.Ed">B.Com/M.Com/B.Ed</option>
@@ -138,12 +136,42 @@ extract($_REQUEST); ?>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="fcpass" class="control-label">Password</label><span id="sp">:</span>
+                           <label for="name" class="control-label">Password</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="password" minlength="5" class="form-control" name="fcpass" autocomplete="off" required>
+                           <input type="password" minlength="5" class="form-control" name="pass" autocomplete="off" required>
+                        </div>
+                     </div> 
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
+                           <label for="name" class="control-label">Add_1</label><span id="sp">:</span> <span style="color:#f00">*</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" name="add1" required>
                         </div>
                      </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
+                           <label for="name" class="control-label">Add_2</label><span id="sp">:</span> <span style="color:#f00">*</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" name="add2" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
+                           <label for="name" class="control-label">Pincode </label><span id="sp">:</span> <span style="color:#f00">*</span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-sx-2">
+                           <input type="number" size="6" maxlength="6" class="form-control" name="pincode" required>
+                        </div>
+                     </div>
+
+                    
+
 
 
 

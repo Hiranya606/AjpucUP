@@ -86,9 +86,12 @@ extract($_REQUEST); ?>
                            <table id="example1" class="table table-bordered table-striped">
                               <thead>
                                  <tr>
-                                    <th>Subject Name </th>
+                                    <!-- <th>Subject ID</th> -->
+                                    <th>Subject Name</th>
+                                    <th>Description</th>
+                                    <th>Branch details ID</th>
                                      <th>Subject Code</th>
-                                     <th>Sem</th>
+                                     <th>Status</th>
                                       <th> Action </th>
                                  </tr>
                               </thead>
@@ -96,7 +99,7 @@ extract($_REQUEST); ?>
                                   
                                  
                                    
-                                 <?php
+                                 <!-- <?php
                                   $i=1;
                                   $sql = "SELECT * From subjects ORDER BY sem ASC";
                                   $result = $con->query($sql);
@@ -142,34 +145,40 @@ extract($_REQUEST); ?>
                                   <?php  }?>
                                     	<td role="cell"><a href="del_sub.php?subcode=<?php echo $row['subcode'];?>"><button>DELETE</button></a></td>
                                </tr>
-                               <?php  $i++; } ?>
+                               <?php  $i++; } ?> -->
                                
                            <?php
-                           $dbz=$_SESSION["dbnamez"];
-                           if($dbz != "admin"){
+                          // $dbz=$_SESSION["dbnamez"];
+                           //if($dbz != "admin"){
                                  $i=1;
-                                  $sql1 = "SELECT * From kvgenggco_admin.subjects ORDER BY sem ASC";
+                                  $sql1 = "SELECT * From subject"; //ORDER BY sem ASC";
                                   $result1 = $con->query($sql1);
                                   while($row1 = $result1->fetch_assoc())
                                   { ?>
                                   <tr>
-                                  <td><?=$row1['Name'];?></td>
-                                    <td><?=$row1['subcode'];?></td>
-                                    <td><?=$row1['sem'];?></td>
-                                    	<td role="cell"><a href="del_sub.php?subcode=<?php echo $row1['subcode'];?>"><button>DELETE</button></a></td>
+                                  <td><?=$row1['Sub_Name'];?></td>
+                                    
+                                    <td><?=$row1['Description'];?></td>
+                                    <td><?=$row1['Branch_details_ID'];?></td>
+                                    <td><?=$row1['Sub_Code'];?></td>
+                                    <td><?=$row1['Status'];?></td>
+
+                                    	<td role="cell"><a href="del_sub.php?subcode=<?php echo $row1['Sub_Code'];?>"><button>DELETE</button></a></td>
                                </tr>
                                <?php $i++; } 
-                               } ?>
+                                ?>
                                
                               </tbody>
-                              <tfoot>
+                              <!-- <tfoot>
                                  <tr>
                                      <th>Subject Name </th>
+                                     <th>Description</th>
                                      <th>Subject Code</th>
-                                     <th>Sem</th>
+                                     <th>Description</th>
+                                     <th>Branch Details ID</th>
                                      <th> Action </th>
                                  </tr>
-                              </tfoot>
+                              </tfoot> -->
                            </table>
                         </div>
                     </div>

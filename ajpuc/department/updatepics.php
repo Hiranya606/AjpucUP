@@ -8,34 +8,35 @@ $type = explode('.', $_FILES['userImage']['name']);
 
     $type = $type[count($type) - 1];
     
-    if(!empty($type))
-    {
+   // if(!empty($type))
+   //{
 
 
-$url = "../img/faculty/$fnum.$type";
+$url = "../img/faculty/$url.$type";
 
 move_uploaded_file($_FILES['userImage']['tmp_name'], $url);
-if(empty( $highqual)=='')
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',url='$url',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass' where Fac_ID='$oldid'"; 
-else if($highqual=='')
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',url='$url',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass' where Fac_ID='$oldid'"; 
-else if()
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',url='$url',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass',Qualification='$highqual' where Fac_ID='$oldid'"; 
-// else
-// $sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',url='$url',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass',Qualification='$highqual' where Fac_ID='$oldid'";
-}
-else
-{
-if($desig=='' && $highqual=='')
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass' where Fac_ID='$oldid'"; 
-else if($highqual=='')
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass' where Fac_ID='$oldid'"; 
-else if($desig=='')
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',$url',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass',Qualification='$highqual' where Fac_ID='$oldid'"; 
-else
-$sql = "UPDATE faculty SET name='$fname',Email_ID='$fcemail',Add_1='$faddl1',Add_2='$faddl2',Pincode='$fpinc',Phone_No='$fnum',password='$fcpass',Qualification='$highqual' where Fac_ID='$oldid'";
 
-}
+//if(empty($desig)=='' && $highqual=='')
+$sql = "UPDATE faculty SET Fname='$fname',Lname='$lname',Phone_No='$phoneno',Email_ID='$email',Status='$status',Gender='$gender',Qualification='$qualification',Password='$pass',Add_1='$add1',Add_2='$add2',Pincode='$pincode',URL='$url' where Fac_ID='$oldid'"; 
+//else if($highqual=='')
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',url='$url',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',designation='$desig',expr='$expr',doj='$doj' where idn='$oldid'"; 
+//else if($desig=='')
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',url='$url',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',high_quali='$highqual',expr='$expr',doj='$doj' where idn='$oldid'"; 
+//else
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',url='$url',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',designation='$desig',high_quali='$highqual',expr='$expr',doj='$doj' where idn='$oldid'";
+//}
+//else
+//{
+//if($desig=='' && $highqual=='')
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',expr='$expr',doj='$doj' where idn='$oldid'"; 
+//else if($highqual=='')
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',designation='$desig',expr='$expr',doj='$doj' where idn='$oldid'"; 
+//else if($desig=='')
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',$url',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',high_quali='$highqual',expr='$expr',doj='$doj' where idn='$oldid'"; 
+//else
+//$sql = "UPDATE faculty SET name='$fname',email='$fcemail',addl1='$faddl1',addl2='$faddl2',addl3='$faddl3',pinc='$fpinc',num='$fnum',pass='$fcpass',designation='$desig',high_quali='$highqual',expr='$expr',doj='$doj' where idn='$oldid'";
+
+// }
 
 
      

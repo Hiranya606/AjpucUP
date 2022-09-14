@@ -38,23 +38,27 @@ extract($_REQUEST); ?>
                <div class="panel-body">
                   <form class="form-horizontal" role="form" method="post" action="Savesubs.php" enctype="multipart/form-data">
 
-                     <div class="form-group">
+                     <!-- <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="subname" class="control-label">Subject Name </label><span id="sp">:</span>
+                           <label for="subname" class="control-label">Subject ID</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" name="subname" required>
-                        </div>
-                     </div>
+                           <input type="number" class="form-control" name="subid" required>
+                        </div> 
+                     </div> -->
+
+                     
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12 row-4">
-                           <label for="subcode" class="control-label">Subject Code </label><span id="sp">:</span>
+                           <label for="subcode" class="control-label">Subject Name</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-2 col-sm-2 col-sx-2">
-                           <input type="text" size="6" maxlength="15" class="form-control" name="subcode" required>
+                           <input type="text" size="6" maxlength="15" class="form-control" name="subname" required>
                         </div>
                      </div>
-                     <div class="form-group">
+
+                     
+                     <!-- <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
                            <label for="sem" class="control-label">CLASS</label><span id="sp">:</span>
                         </div>
@@ -71,7 +75,7 @@ extract($_REQUEST); ?>
 
                         </div>
 
-                     </div>
+                     </div> -->
                      <br>
 
 
@@ -98,9 +102,28 @@ extract($_REQUEST); ?>
                            <label for="Description" class="control-label">Description</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" name="Description" required>
+                           <input type="text" class="form-control" name="description" required>
                         </div>
                      </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="subname" class="control-label">Branch Details ID</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="number" class="form-control" name="bdid" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="subname" class="control-label">Subject Code</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" name="subcode" required>
+                        </div>
+                     </div>
+
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">

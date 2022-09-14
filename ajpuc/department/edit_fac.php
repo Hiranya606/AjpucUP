@@ -2,15 +2,9 @@
 include('sidebar.php');
 include('dbconfig.php');
 extract($_REQUEST);
-<<<<<<< HEAD
-$ssql="SELECT * FROM faculty where Fac_id=$oldid";
-$result=$con->query($ssql);
-$row=$result->fetch_assoc();
-=======
-$ssql = "SELECT * FROM faculty where Fac_ID=$oldid";
-$result = $con->query($ssql);
+$sql = "SELECT * FROM faculty where Fac_ID='$oldid'";
+$result = $con->query($sql);
 $row = $result->fetch_assoc();
->>>>>>> e5f89193f95d5d67589238a48d31307696b5d054
 ?>
 <div class="content-wrapper">
    <!-- Content Header (Page header) -->
@@ -62,7 +56,7 @@ $row = $result->fetch_assoc();
                <div class="panel-heading">Add Faculty </div>
                <div class="panel-body">
                   <form class="form-horizontal" role="form" method="post" action="updatepics.php" enctype="multipart/form-data">
-                     <input type="text" style="visibility:hidden;" name="oldid" value="<?php echo $oldid; ?>">
+                     <input type="number" style="visibility:hidden;" name="oldid" value="<?php echo $oldid; ?>">
 
 
                      <div class="form-group">
@@ -78,93 +72,83 @@ $row = $result->fetch_assoc();
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> 
 
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="name" class="control-label">Name </label><span id="sp">:</span>
+                           <label for="name" class="control-label">Fname </label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
                            <input type="text" class="form-control" value="<?php echo $row['Fname']; ?>" name="fname" required>
                         </div>
                      </div>
 
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="name" class="control-label">Lname </label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" value="<?php echo $row['Lname']; ?>" name="lname" required>
+                        </div>
+                     </div>
+
+
+
 
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12 row-4">
-                           <label for="name" class="control-label">Address Line 1 </label><span id="sp">:</span>
+                           <label for="name" class="control-label">Phone_No</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" value="<?php echo $row['Add_1']; ?>" name="faddl1" required>
+                           <input type="text" class="form-control" value="<?php echo $row['Phone_No']; ?>" name="phoneno">
                         </div>
                      </div>
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12 row-4">
-                           <label for="name" class="control-label">Address Line 2 </label><span id="sp">:</span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" value="<?php echo $row['Add_2']; ?>" name="faddl2">
-                        </div>
-                     </div>
-                     <!-- <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
-                           <label for="name" class="control-label">Address Line 3 </label><span id="sp">:</span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" value="<?php echo $row['City']; ?>" name="faddl3">
-                        </div>
-                     </div> -->
-                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
-                           <label for="name" class="control-label">Pin Code </label><span id="sp">:</span>
+                           <label for="femail" class="control-label">Email_ID</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-2 col-sm-2 col-sx-2">
-                           <input type="text" size="6" maxlength="6" class="form-control" value="<?php echo $row['Pincode']; ?>" name="fpinc" required>
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="name" class="control-label">Contact number</label><span id="sp">:</span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="number" maxlength="10" class="form-control" value="<?php echo $row['Phone_No']; ?>" name="fnum" required>
+                           <input type="text" size="6" maxlength="6" class="form-control" value="<?php echo $row['Email_ID']; ?>" name="email" required>
                         </div>
                      </div>
 
-                     <!-- <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="desig" class="control-label">Faculty Designation</label><span id="sp">:</span>
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12 row-4">
+                           <label for="name" class="control-label">Status</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <select name="desig">
-                              <option value="
-                              
-                              <option value="Principal">Principal</option>
-                              <option value="Professor">Professor</option>
-                              <option value="Asst.Professor">Asst.Professor</option>
-                              <option value="Assoc.Professor">Assoc.Professor</option>
-                              <option value="Lecturer">Lecturer</option>
+                           <input type="text" class="form-control" value="<?php echo $row['Status']; ?>" name="status" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="name" class="control-label">Gender</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                          
+                           <select name="gender">
+                           <option value="<?php $row['Gender']; ?>"></option> 
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Others">Others</option>
                            </select>
                         </div>
-                     </div> -->
+                     </div>
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="highqual" class="control-label">Faculty Highest Qualification</label><span id="sp">:</span>
+                           <label for="name" class="control-label">Qualification</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <select name="highqual">
-                              <option value="<?php $row['Qualification']; ?>"><?php echo $row['Qualification']; ?></option>
-                              <option value="B.E/B.Tech">B.E/B.Tech</option>
-                              <option value="B.Arch">B.Arch</option>
-                              <option value="MBA">MBA</option>
-                              <option value="MCA">MCA</option>
-                              <option value="M.Tech">M.Tech</option>
-                              <option value="M.Arch">M.Arch</option>
-                              <option value="Msc">Msc</option>
-                              <option value="Msc.Engg">Msc.Engg</option>
+                           <select name="qualification">
+                              <option value="<?php $row['Qualification']; ?>"></option>
+                              <option value="B.Sc/M.Sc/B.Ed">B.Sc/M.Sc/B.Ed</option>
+                              <option value="B.Com/M.Com/B.Ed">B.Com/M.Com/B.Ed</option>
+                              <option value="B.A/M.A/B.Ed">B.A/M.A/B.Ed</option>
+                              <option value="BCA/MCA/B.Ed">BCA/MCA/B.Ed</option>
                               <option value="Ph.D">Ph.D</option>
                               <option value="Ph.D">other</option>
                            </select>
@@ -173,16 +157,80 @@ $row = $result->fetch_assoc();
 
                      <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="fcemail" class="control-label">Email</label><span id="sp">:</span>
+                           <label for="name" class="control-label">Password</label><span id="sp">:</span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="text" class="form-control" value="<?php echo $row['Email_ID']; ?>" name="fcemail" autocomplete="off" required>
+                           <input type="password" minlength="5" value="<?php echo $row['Password']; ?>" class="form-control" name="pass" autocomplete="off" required>
+                        </div>
+                     </div> 
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="name" class="control-label">Add_1</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" value="<?php echo $row['Add_1']; ?>" name="add1" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="name" class="control-label">Add_2</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" value="<?php echo $row['Add_2']; ?>" name="add2" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="name" class="control-label">Pincode</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="number" class="form-control" value="<?php echo $row['Pincode']; ?>" name="pincode" required>
+                        </div>
+                     </div>
+
+
+
+
+                     <!-- <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="desig" class="control-label">Faculty Designation</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <select name="desig">
+                              <option value="<?php $row['designation']; ?>"><?php echo $row['designation']; ?></option>
+                              <option value="Principal">Principal</option>
+                              <option value="Professor">Professor</option>
+                              <option value="Asst.Professor">Asst.Professor</option>
+                              <option value="Assoc.Professor">Assoc.Professor</option>
+                              <option value="Lecturer">Lecturer</option>
+                           </select>
                         </div>
                      </div>
 
                      
 
-                     <!-- <div class="form-group">
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="fcemail" class="control-label">Email</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sx-12">
+                           <input type="text" class="form-control" value="<?php echo $row['email']; ?>" name="fcemail" autocomplete="off" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-md-4 col-sm-4 col-sx-12">
+                           <label for="expr" class="control-label">Experience in Years</label><span id="sp">:</span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-sx-12">
+                           <input type="number" class="form-control" value="<?php echo $row['expr']; ?>" name="expr" autocomplete="off" required>
+                        </div>
+                     </div>
+
+                     <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-sx-12">
                            <label for="doj" class="control-label">Date Of Join</label><span id="sp">:</span>
                         </div>
@@ -192,14 +240,7 @@ $row = $result->fetch_assoc();
                      </div> -->
 
 
-                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-sx-12">
-                           <label for="fcpass" class="control-label">Password</label><span id="sp">:</span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sx-12">
-                           <input type="password" minlength="5" value="<?php echo $row['password']; ?>" class="form-control" name="fcpass" autocomplete="off" required>
-                        </div>
-                     </div>
+
                      <br>
                      <div class="col-md-10 col-sm-10 col-sx-12">
                         <input id="submit" name="submit" type="submit" value="Update Faculty" class="btn btn-success pull-right">
